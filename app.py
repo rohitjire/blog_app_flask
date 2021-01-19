@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+
 app = Flask(__name__)
 
 
@@ -17,5 +18,9 @@ def contact():
     return render_template('contact.html')
 
 
-app.run(debug=True)
+@app.route("/post")
+def post():
+    return render_template('post.html')
 
+
+app.run(debug=True)
